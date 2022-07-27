@@ -7,15 +7,20 @@ Their is a few step to run your chat-microservice
   
 #### STEP 2   To Regenrate a gRPC code :
     write on terminal
-   <pre>make chat</pre>
+   <pre>
+   protoc -Ichat/proto --go_out=. --go_opt=module=gRPC  --go-grpc_out=. --go-grpc_opt=module=gRPC  chat/proto/chat.proto
+   </pre>
    
-#### STEP 3 :
-  open two terminal one for server and one for client
+#### STEP 3 To Built a server :
+  <pre>go build -o bin/chat/server ./chat/server</pre>
   
-#### STEP 4 To Run the Server :
+#### STEP 4 To Built a client :
+  <pre>go build -o bin/chat/client ./chat/client</pre>
+  
+#### STEP 5 To Run the Server :
   write on server termial
-  <pre>make server</pre>
+  <pre>./bin/chat/server</pre>
   
-#### STEP 5 To Run the Client :
+#### STEP 6 To Run the Client :
   write on client terminal
-  <pre>make client</pre>
+  <pre>./bin/chat/client</pre>
