@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "gRPC/chat/proto";
+
+message ChatRequest {
+    string message_req = 1;
+}
+
+message ChatResponse {
+    string message_res = 1;
+}
+
+service ChatServive {
+    rpc Chat (stream ChatRequest) returns (stream ChatResponse);
+}
