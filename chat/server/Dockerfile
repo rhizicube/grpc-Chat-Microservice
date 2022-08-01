@@ -25,5 +25,4 @@ COPY . .
 
 
 EXPOSE 50051
-grpc-Chat-Microservice
 CMD ["go", "run", "server.go"]
